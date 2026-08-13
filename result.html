@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DISC GAME - ผลการวิเคราะห์</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                "Noto Sans Thai",
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eefdf8,
+                    #eaf8ff
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+        }
+
+
+        .result-container {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            background: white;
+
+            border-radius: 28px;
+
+            padding: 35px 28px;
+
+            box-shadow:
+                0 15px 50px
+                rgba(0, 80, 100, 0.15);
+
+            text-align: center;
+
+        }
+
+
+        .logo img {
+
+            width: 110px;
+
+            height: auto;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .brand {
+
+            color: #008fa8;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        h1 {
+
+            margin: 0 0 8px;
+
+            color: #243f45;
+
+            font-size: 28px;
+
+        }
+
+
+        .subtitle {
+
+            color: #718084;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .result-main {
+
+            border-radius: 22px;
+
+            padding: 25px;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f1fffb,
+                    #eefaff
+                );
+
+        }
+
+
+        .result-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .result-type {
+
+            font-size: 42px;
+
+            font-weight: bold;
+
+            color: #008fa8;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .result-name {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: #243f45;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .result-description {
+
+            color: #60777c;
+
+            line-height: 1.7;
+
+        }
+
+
+        .scores {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .score-card {
+
+            padding: 18px;
+
+            border-radius: 18px;
+
+            background: #f7fafb;
+
+            border: 1px solid #e5eeee;
+
+        }
+
+
+        .score-letter {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+        }
+
+
+        .score-value {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            color: #243f45;
+
+            margin-top: 5px;
+
+        }
+
+
+        .detail-section {
+
+            text-align: left;
+
+            margin-top: 20px;
+
+            padding: 20px;
+
+            border-radius: 18px;
+
+            background: #f8fbfb;
+
+        }
+
+
+        .detail-section h2 {
+
+            font-size: 19px;
+
+            color: #243f45;
+
+            margin-top: 0;
+
+        }
+
+
+        .detail-section ul {
+
+            padding-left: 22px;
+
+            line-height: 1.8;
+
+            color: #60777c;
+
+        }
+
+
+        .management {
+
+            color: #60777c;
+
+            line-height: 1.8;
+
+        }
+
+
+        .restart-button {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 15px;
+
+            padding: 15px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00a88f,
+                    #008fa8
+                );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 20px;
+
+        }
+
+
+        .restart-button:hover {
+
+            opacity: 0.9;
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .result-container {
+
+                padding: 28px 18px;
+
+            }
+
+            h1 {
+
+                font-size: 24px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="result-container">
+
+
+        <div class="logo">
+
+            <img
+                src="assets/logo.png"
+                alt="THEFAST GROUP"
+            >
+
+        </div>
+
+
+        <div class="brand">
+
+            THEFAST GROUP
+
+        </div>
+
+
+        <h1>
+
+            ผลการวิเคราะห์ DISC
+
+        </h1>
+
+
+        <div class="subtitle">
+
+            คุณเป็นคนแบบไหนในการทำงาน?
+
+        </div>
+
+
+        <!-- ผลหลัก -->
+
+        <section class="result-main">
+
+            <div
+                class="result-icon"
+                id="resultIcon"
+            >
+                🔴
+            </div>
+
+
+            <div
+                class="result-type"
+                id="resultType"
+            >
+                D
+            </div>
+
+
+            <div
+                class="result-name"
+                id="resultName"
+            >
+                นักลุย นักตัดสินใจ
+            </div>
+
+
+            <div
+                class="result-description"
+                id="resultDescription"
+            >
+                คุณเป็นคนที่กล้าคิด กล้าทำ
+                และมุ่งเน้นเป้าหมาย
+            </div>
+
+        </section>
+
+
+        <!-- คะแนน -->
+
+        <section class="scores">
+
+
+            <div class="score-card">
+
+                <div
+                    class="score-letter"
+                    style="color:#d93636;"
+                >
+                    D
+                </div>
+
+                <div
+                    class="score-value"
+                    id="scoreD"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <div
+                    class="score-letter"
+                    style="color:#d6aa00;"
+                >
+                    I
+                </div>
+
+                <div
+                    class="score-value"
+                    id="scoreI"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <div
+                    class="score-letter"
+                    style="color:#35a84a;"
+                >
+                    S
+                </div>
+
+                <div
+                    class="score-value"
+                    id="scoreS"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+            <div class="score-card">
+
+                <div
+                    class="score-letter"
+                    style="color:#2777b8;"
+                >
+                    C
+                </div>
+
+                <div
+                    class="score-value"
+                    id="scoreC"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- จุดเด่น -->
+
+        <section class="detail-section">
+
+            <h2>
+
+                ✨ จุดเด่น
+
+            </h2>
+
+
+            <ul id="strengths">
+
+                <li>กล้าคิด</li>
+
+                <li>กล้าทำ</li>
+
+                <li>ชอบเป้าหมาย</li>
+
+                <li>รวดเร็ว</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- สิ่งที่ควรพัฒนา -->
+
+        <section class="detail-section">
+
+            <h2>
+
+                🌱 สิ่งที่ควรพัฒนา
+
+            </h2>
+
+
+            <ul id="improvements">
+
+                <li>ฟังคนอื่นมากขึ้น</li>
+
+                <li>ใจเย็นขึ้น</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- การบริหาร -->
+
+        <section class="detail-section">
+
+            <h2>
+
+                💼 แนวทางการบริหาร
+
+            </h2>
+
+
+            <div
+                class="management"
+                id="management"
+            >
+
+                อย่าพูดเยอะ
+                ให้พูดเป้าหมาย
+                ผลลัพธ์ และความท้าทาย
+
+            </div>
+
+        </section>
+
+
+        <button
+    class="start-button"
+    onclick="submitResult()">
+
+    📤 ส่งผลการทดสอบ
+
+</button>
+
+
+<button
+    class="restart-button"
+    onclick="restartGame()">
+
+    🔄 ทำแบบทดสอบอีกครั้ง
+
+</button>
+
+    </main>
+
+
+<script>
+
+    // อ่านคะแนนจาก quiz.html
+    const savedScores =
+        localStorage.getItem("discScores");
+
+
+    // ถ้าไม่มีคะแนน ให้ใช้ 0
+    const scores =
+        savedScores
+            ? JSON.parse(savedScores)
+            : {
+                D: 0,
+                I: 0,
+                S: 0,
+                C: 0
+            };
+
+
+    // แสดงคะแนน
+    document.getElementById("scoreD").textContent =
+        scores.D;
+
+    document.getElementById("scoreI").textContent =
+        scores.I;
+
+    document.getElementById("scoreS").textContent =
+        scores.S;
+
+    document.getElementById("scoreC").textContent =
+        scores.C;
+
+
+    // หา DISC ที่คะแนนสูงที่สุด
+    let type = "D";
+
+    let highest = scores.D;
+
+
+    if (scores.I > highest) {
+        type = "I";
+        highest = scores.I;
+    }
+
+
+    if (scores.S > highest) {
+        type = "S";
+        highest = scores.S;
+    }
+
+
+    if (scores.C > highest) {
+        type = "C";
+        highest = scores.C;
+    }
+
+
+    // ข้อมูล DISC
+    const discData = {
+
+        D: {
+            icon: "🔴",
+
+            name:
+                "นักลุย นักตัดสินใจ",
+
+            description:
+                "คุณเป็นคนกล้าคิด กล้าทำ ชอบเป้าหมาย และตัดสินใจรวดเร็ว",
+
+            strengths: [
+                "กล้าคิด",
+                "กล้าทำ",
+                "ชอบเป้าหมาย",
+                "รวดเร็ว"
+            ],
+
+            improvements: [
+                "ฟังคนอื่นมากขึ้น",
+                "ใจเย็นขึ้น"
+            ],
+
+            management:
+                "อย่าพูดเยอะ ให้พูดเป้าหมาย ผลลัพธ์ และความท้าทาย"
+        },
+
+
+        I: {
+            icon: "🟡",
+
+            name:
+                "นักสร้างสัมพันธ์",
+
+            description:
+                "คุณเป็นคนสื่อสารเก่ง เข้ากับคนง่าย และสร้างบรรยากาศที่ดีให้กับทีม",
+
+            strengths: [
+                "สื่อสารเก่ง",
+                "เข้ากับคนง่าย",
+                "สร้างแรงจูงใจ",
+                "มีพลังบวก"
+            ],
+
+            improvements: [
+                "ใส่ใจรายละเอียดมากขึ้น",
+                "วางแผนก่อนลงมือทำ",
+                "ควบคุมความตื่นเต้น"
+            ],
+
+            management:
+                "เปิดโอกาสให้ได้พูดคุย แสดงความคิดเห็น และสร้างความสัมพันธ์กับทีม"
+        },
+
+
+        S: {
+            icon: "🟢",
+
+            name:
+                "นักประสานงาน",
+
+            description:
+                "คุณเป็นคนใจเย็น รับฟังผู้อื่น ให้ความสำคัญกับความสัมพันธ์ และชอบช่วยเหลือคนรอบตัว",
+
+            strengths: [
+                "รับฟังเก่ง",
+                "ใจเย็น",
+                "ทำงานเป็นทีม",
+                "น่าเชื่อถือ"
+            ],
+
+            improvements: [
+                "กล้าแสดงความคิดเห็นมากขึ้น",
+                "ตัดสินใจให้เร็วขึ้น",
+                "กล้ารับมือกับความขัดแย้ง"
+            ],
+
+            management:
+                "สร้างบรรยากาศที่ปลอดภัย ให้เวลาในการปรับตัว และสื่อสารอย่างสม่ำเสมอ"
+        },
+
+
+        C: {
+            icon: "🔵",
+
+            name:
+                "นักวิเคราะห์",
+
+            description:
+                "คุณเป็นคนละเอียด รอบคอบ มีเหตุผล และให้ความสำคัญกับความถูกต้องของงาน",
+
+            strengths: [
+                "ละเอียดรอบคอบ",
+                "วิเคราะห์เก่ง",
+                "มีเหตุผล",
+                "มาตรฐานสูง"
+            ],
+
+            improvements: [
+                "อย่าคิดมากเกินไป",
+                "ยืดหยุ่นมากขึ้น",
+                "ตัดสินใจให้เร็วขึ้น"
+            ],
+
+            management:
+                "ให้ข้อมูลและรายละเอียดที่ชัดเจน กำหนดมาตรฐานงาน และให้เวลาในการวิเคราะห์ก่อนตัดสินใจ"
+        }
+
+    };
+
+
+    // ข้อมูลของประเภทที่ได้คะแนนสูงสุด
+    const result =
+        discData[type];
+
+
+    // แสดงผลหลัก
+    document.getElementById("resultIcon").textContent =
+        result.icon;
+
+    document.getElementById("resultType").textContent =
+        type;
+
+    document.getElementById("resultName").textContent =
+        result.name;
+
+    document.getElementById("resultDescription").textContent =
+        result.description;
+
+
+    // แสดงจุดเด่น
+    const strengths =
+        document.getElementById("strengths");
+
+    strengths.innerHTML = "";
+
+    result.strengths.forEach(function(item) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = item;
+
+        strengths.appendChild(li);
+
+    });
+
+
+    // แสดงสิ่งที่ควรพัฒนา
+    const improvements =
+        document.getElementById("improvements");
+
+    improvements.innerHTML = "";
+
+    result.improvements.forEach(function(item) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = item;
+
+        improvements.appendChild(li);
+
+    });
+
+
+    // แสดงแนวทางการบริหาร
+    document.getElementById("management").textContent =
+        result.management;
+
+
+    // ทำแบบทดสอบอีกครั้ง
+    function restartGame() {
+
+    localStorage.removeItem("discScores");
+
+    localStorage.removeItem("discAnswers");
+
+    localStorage.removeItem("discSubmitted");
+
+    window.location.href = "quiz.html";
+
+}
+
+    function submitResult() {
+
+    if (localStorage.getItem("discSubmitted") === "true") {
+
+        alert("ผลการทดสอบนี้ถูกส่งไปแล้วค่ะ");
+
+        return;
+    }
+
+    const name =
+        localStorage.getItem("discName") || "";
+
+    const department =
+        localStorage.getItem("discDepartment") || "";
+
+    const answers =
+        JSON.parse(
+            localStorage.getItem("discAnswers") || "[]"
+        );
+
+    const data = {
+
+        name: name,
+
+        department: department,
+
+        D: scores.D,
+
+        I: scores.I,
+
+        S: scores.S,
+
+        C: scores.C,
+
+        personality:
+            type + " - " + result.name,
+
+        q1: answers[0] || "",
+
+        q2: answers[1] || "",
+
+        q3: answers[2] || "",
+
+        q4: answers[3] || "",
+
+        q5: answers[4] || "",
+
+        q6: answers[5] || "",
+
+        q7: answers[6] || "",
+
+        q8: answers[7] || "",
+
+        q9: answers[8] || "",
+
+        q10: answers[9] || ""
+
+    };
+
+
+    fetch(
+        "https://script.google.com/macros/s/AKfycbwNyq6beGiOHmQkq8SDXNJAa6JeKGhEvP3e8K6RYdhIsJymHH0M6dtJ_Gu5owrO3mfg/exec",
+        {
+            method: "POST",
+
+            body: JSON.stringify(data)
+        }
+    )
+    .then(function(response) {
+
+        return response.json();
+
+    })
+    .then(function(result) {
+
+        if (result.success) {
+
+    localStorage.setItem(
+        "discSubmitted",
+        "true"
+    );
+
+    alert("ส่งผลการทดสอบเรียบร้อยแล้วค่ะ");
+
+} else {
+
+            alert(
+                "เกิดข้อผิดพลาด: " +
+                result.error
+            );
+
+        }
+
+    })
+    .catch(function(error) {
+
+        console.error(error);
+
+        alert(
+            "ไม่สามารถส่งข้อมูลได้ค่ะ"
+        );
+
+    });
+
+}
+
+</script>

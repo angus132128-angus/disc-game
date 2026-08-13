@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>DISC GAME – THEFAST GROUP</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <!-- LOGO -->
+        <div class="logo-box">
+
+            <img
+                src="assets/logo.png"
+                alt="THEFAST GROUP"
+                class="logo"
+            >
+
+        </div>
+
+
+        <!-- TITLE -->
+        <section class="intro">
+
+            <p class="company-name">
+                THEFAST GROUP
+            </p>
+
+            <h1>
+                🎮 DISC GAME
+            </h1>
+
+            <h2>
+                คุณเป็นคนแบบไหน<br>
+                ในการทำงาน?
+            </h2>
+
+            <p class="description">
+                ค้นพบสไตล์การทำงานที่เป็นตัวคุณ
+            </p>
+
+        </section>
+
+
+        <!-- USER INFORMATION -->
+        <section class="user-form">
+
+            <label for="name">
+                👤 ชื่อของคุณ
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="กรอกชื่อของคุณ"
+            >
+
+
+            <label for="department">
+                🏢 หน่วย / แผนก
+            </label>
+
+            <input
+                type="text"
+                id="department"
+                placeholder="กรอกหน่วยหรือแผนก"
+            >
+
+        </section>
+
+
+        <!-- START BUTTON -->
+        <button
+            type="button"
+            class="start-button"
+            onclick="startGame()"
+        >
+            🚀 เริ่มค้นหาตัวตน
+        </button>
+
+
+        <!-- DISC TYPES -->
+        <section class="disc-types">
+
+            <div class="disc-card d-card">
+                <span>🔴</span>
+                <strong>D</strong>
+            </div>
+
+            <div class="disc-card i-card">
+                <span>🟡</span>
+                <strong>I</strong>
+            </div>
+
+            <div class="disc-card s-card">
+                <span>🟢</span>
+                <strong>S</strong>
+            </div>
+
+            <div class="disc-card c-card">
+                <span>🔵</span>
+                <strong>C</strong>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
