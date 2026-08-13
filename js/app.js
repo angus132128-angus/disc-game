@@ -30,11 +30,15 @@ function startGame() {
 
 
     localStorage.setItem(
+    "discName",
+    name
+);
+
+localStorage.setItem(
     "discDepartment",
     department
 );
 
-// เริ่มรอบใหม่ ต้องถือว่ายังไม่ได้ส่งผล
 localStorage.removeItem("discSubmitted");
 
 window.location.href =
