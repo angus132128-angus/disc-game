@@ -30,18 +30,13 @@ function startGame() {
 
 
     localStorage.setItem(
-        "discName",
-        name
-    );
+    "discDepartment",
+    department
+);
 
+// เริ่มรอบใหม่ ต้องถือว่ายังไม่ได้ส่งผล
+localStorage.removeItem("discSubmitted");
 
-    localStorage.setItem(
-        "discDepartment",
-        department
-    );
-
-
-    window.location.href =
-        "quiz.html";
-
+window.location.href =
+    "quiz.html";
 }
